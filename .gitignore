@@ -1,0 +1,30 @@
+# Байт-код Python (временные файлы компиляции)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Окружение (Virtual Environment)
+venv/
+.venv/
+env/
+bin/
+include/
+lib/
+share/
+
+# Pytest
+.pytest_cache/
+.pytest-cache/
+
+# Allure
+# Исключаем папку с результатами (json/txt файлы), из которых строится отчет
+allure-results/
+
+
+# Логи и временные файлы
+*.log
+.DS_Store
+.idea/
+.vscode/
+
+.env
