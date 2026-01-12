@@ -20,9 +20,3 @@ def register_new_courier_and_return_login_password():
         "firstName": first_name
         }
 
-def non_existent_courier_body():
-    return {
-        "login": "Uchiha",
-        "password": "Haringan",
-        "firstName": "Saske"
-    }

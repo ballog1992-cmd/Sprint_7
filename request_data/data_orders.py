@@ -21,3 +21,11 @@ class DataOrdersBody:
         "deliveryDate": "2020-06-06",
         "comment": "Saske, come back to Konoha"
     }
+
+
+def non_existent_courier_body():
+    return {
+        "login": "Uchiha",
+        "password": "Haringan",
+        "firstName": "Saske"
+    }

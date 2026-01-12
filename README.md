@@ -31,3 +31,18 @@ pip install -r requirements.txt
 
 pytest -v -s
 ````
+Список изменений:
+
+*1 Добавил декоратор allure.step ко всем методам
+*2 Добавил цикл и вывод сообщения об пустом списке в фикстуру order_tracker 
+*3 Теперь создание курьера идет через фикстуру registered_courier
+*4 Удалил повторяющийся в test_create_courier тест test_system_return_an_error_creating_courier_an_existing_login 
+*5 Исправил названия тестов 
+*6 В test_login_courier тест test_login_courier_missing_required_field_bad_request теперь работает через метод
+*7 Перенес non_existent_courier_body из helper в data_orders
+
+Что оставил без изменений:
+
+*1 Фикстура order_tracker по задумке нужна только для добавления id заказа в track_id и его удаления после завершения теста
+
+ 

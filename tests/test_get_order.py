@@ -7,7 +7,7 @@ from helper import *
 class TestOrderList:
 
     @allure.title("Проверка получения списка заказов")
-    def test_get_orders_list_returns_list(self):
+    def test_get_orders_full_list_is_returned(self):
 
         response = OrdersMethods.get_orders()
 

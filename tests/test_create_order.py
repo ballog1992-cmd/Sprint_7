@@ -13,7 +13,7 @@ class TestCreateOrder:
         ["BLACK", "GREY"], 
         []
     ])
-    def test_create_order_with_colors(self, colors_list, order_tracker):
+    def test_create_order_various_colors_track_id_received(self, colors_list, order_tracker):
         colors_lst = DataOrdersBody.ORDER_BODY_TEMPLATE.copy()
         colors_lst["color"] = colors_list
 
@@ -24,3 +24,4 @@ class TestCreateOrder:
 
         assert response.status_code == DataOrdersCode.SUCCESSFUL_ORDER_CREATION_CODE
         assert "track" in response.json()
+        

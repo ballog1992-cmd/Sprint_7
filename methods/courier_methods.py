@@ -1,18 +1,31 @@
+import allure
 import requests
 from curl import Url
 
 
 class CourierMethods:
+
+    
     @staticmethod
+    @allure.step("Создать курьера")
     def create_courier(body):
         return requests.post(Url.CREATING_COURIER_URL, json=body)
-
+    
+    
     @staticmethod
-    def login_courier(login, password):
-        payload = {"login": login, "password": password}
+    @allure.step("Вход курьера в систему")
+    def login_courier(login=None, password=None):
+        # payload = {"login": login, "password": password}
+        payload = {}
+        if login is not None:
+            payload["login"] = login
+        if password is not None:
+            payload["password"] = password
         return requests.post(Url.COURIER_LOGIN_URL, json=payload)
-
+    
+    
     @staticmethod
+    @allure.step("Удалить курьера")
     def delete_courier(login, password):
 
         login_courier = requests.post(
