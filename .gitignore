@@ -18,6 +18,7 @@ share/
 
 # Allure
 # Исключаем папку с результатами (json/txt файлы), из которых строится отчет
+allure_results/
 allure-results/
 
 
