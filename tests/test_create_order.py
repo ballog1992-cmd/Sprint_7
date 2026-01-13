@@ -8,20 +8,12 @@ from helper import *
 class TestCreateOrder:
 
     @allure.title("Успешное создание заказа с разными вариантами цветов")
-    @pytest.mark.parametrize("colors_list", [
-        ["BLACK"], ["GREY"], 
-        ["BLACK", "GREY"], 
-        []
-    ])
-    def test_create_order_various_colors_track_id_received(self, colors_list, order_tracker):
-        colors_lst = DataOrdersBody.ORDER_BODY_TEMPLATE.copy()
-        colors_lst["color"] = colors_list
-
-        response = OrdersMethods.create_order(colors_lst)
-
-        track_id = response.json().get("track")
-        order_tracker.append(track_id)
-
-        assert response.status_code == DataOrdersCode.SUCCESSFUL_ORDER_CREATION_CODE
-        assert "track" in response.json()
+    @pytest.mark.parametrize("order_tracker", [
+        {"color": ["BLACK"]}, {"color": ["GREY"]},
+        {"color": ["BLACK", "GREY"]}, 
+        {"color": []}], indirect=True)
+    def test_create_order_various_colors_track_id_received(self, order_tracker):
+        
+        assert order_tracker.status_code == DataOrdersCode.SUCCESSFUL_ORDER_CREATION_CODE
+        assert "track" in order_tracker.json()
         

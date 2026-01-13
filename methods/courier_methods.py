@@ -15,7 +15,7 @@ class CourierMethods:
     @staticmethod
     @allure.step("Вход курьера в систему")
     def login_courier(login=None, password=None):
-        # payload = {"login": login, "password": password}
+        
         payload = {}
         if login is not None:
             payload["login"] = login
